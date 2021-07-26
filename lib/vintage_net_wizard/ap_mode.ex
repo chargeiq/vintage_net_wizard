@@ -32,7 +32,9 @@ defmodule VintageNetWizard.APMode do
           %{
             mode: :ap,
             ssid: ssid,
-            key_mgmt: :none
+            key_mgmt: :wpa_psk,
+            psk:
+              (VintageNet.get(["interface", "wlan0", "ap", "psk"]) || "12345678")
           }
         ]
       },
