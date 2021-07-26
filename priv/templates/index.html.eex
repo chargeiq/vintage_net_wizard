@@ -11,7 +11,7 @@
      <div class="container access-points-container">
        <h1 class="text-right mt-2"><a href="/" style="color: <%= ui.title_color %>"><%= ui.title %></a></h1>
        <h3 class="text-left mt-2">
-        Configuration status:
+        WLAN- Status:
         <span class="<%= configuration_status.class %>">
           <%= configuration_status.value%>
           <span style="bottom: 8px;right: 5px;position: relative" title="<%= configuration_status.title %>">
@@ -57,17 +57,16 @@
 
        </div>
 
-       <p><i>Drag the networks to change the order that they will be tried</i></p>
-
+       
        <a class="btn btn-primary" style="background-color:<%= ui.button_color %>" href="/networks">
-         Add a new network
+					Netzwek hinzufügen
        </a>
        <%= if length(configs) > 0 do %>
          <a class="btn btn-primary" style="background-color:<%= ui.button_color %>" href="/apply">
-           Apply configuration
+           Konfiguration anwenden
          </a>
          <a class="btn btn-secondary" href="/complete" title="This will apply the configuration without any attempt to verify a successful network connection.">
-           Complete without verification
+           Anwenden ohne Prüfung
          </a>
        <% end %>
      </div>

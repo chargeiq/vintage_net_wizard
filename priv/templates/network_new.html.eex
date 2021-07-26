@@ -18,7 +18,7 @@
            </div>
 
            <div class="form-group">
-             <label for="key_mgmt">Security</label>
+             <label for="key_mgmt">Sicherheit</label>
              <select id="key_mgmt" name="key_mgmt" class="custom-select js-security-select">
                <option value="none" selected>None</option>
                <option value="wpa_psk">WPA Personal</option>
@@ -27,7 +27,7 @@
            </div>
 
            <button type="submit" class="btn btn-primary" style="background-color:<%= ui.button_color %>">
-             Next
+             Weiter
            </button>
          </form>
          </div>
