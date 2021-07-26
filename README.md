@@ -1,3 +1,11 @@
+----- 
+This is a fork of `nerves-networking/vintage_net_wizard` used as a dependency for CHA.
+It exists to satisfy two requirements not met by the upstream project as of yet:
+- Translation of the GUI to German
+- Using a psk in AP mode
+-----
+
+
 # VintageNet WiFi Configuration Wizard
 
 [![CircleCI](https://circleci.com/gh/nerves-networking/vintage_net_wizard.svg?style=svg)](https://circleci.com/gh/nerves-networking/vintage_net_wizard)
