@@ -119,6 +119,8 @@ defmodule VintageNetWizard.Web.Router do
   end
 
   get "/complete" do
+
+    Task.async(fn ->
     :ok = BackendServer.complete()
 
     _ =
@@ -128,6 +130,7 @@ defmodule VintageNetWizard.Web.Router do
         :timer.sleep(3000)
         Endpoint.stop_server(:shutdown)
       end)
+     end)
 
     render_page(conn, "complete.html", opts)
   end
