@@ -59,7 +59,7 @@
 
        
        <a class="btn btn-primary" style="background-color:<%= ui.button_color %>" href="/networks">
-					Netzwek hinzufügen
+					Netzwerk hinzufügen
        </a>
        <%= if length(configs) > 0 do %>
          <a class="btn btn-primary" style="background-color:<%= ui.button_color %>" href="/complete">
