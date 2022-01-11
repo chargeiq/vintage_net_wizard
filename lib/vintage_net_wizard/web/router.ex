@@ -35,6 +35,20 @@ defmodule VintageNetWizard.Web.Router do
     end
   end
 
+  get "/settings" do
+    render_page(conn, "settings.html", opts)
+  end
+
+  post "/settings/set" do
+    p = conn.body_params["amps"]
+    case Integer.parse(p) do
+      {n, _} -> Cha.HW.charger_default_amps(n)
+       _ -> nil
+    end
+    Process.sleep(3000)
+    redirect(conn, "/settings")
+  end
+  
   post "/ssid/:ssid" do
     password = conn.body_params["password"]
     params = Map.put(conn.body_params, "ssid", ssid)

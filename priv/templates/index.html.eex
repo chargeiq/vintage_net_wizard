@@ -76,6 +76,7 @@
              <span class="col"><%= info_data %></span>
            </div>
          <% end %>
+      <a href="/settings"> Einstellungen </a>
      </footer>
 
      <script src="/js/Sortable.min.js"></script>

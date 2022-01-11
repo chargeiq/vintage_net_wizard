@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= ui.title %></title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+  </head>
+
+  <body class="bg-light h-100 d-flex flex-column">
+     <div class="container">
+       <h1 class="text-right mt-2"><a href="/" style="color: <%= ui.title_color %>"><%= ui.title %></a></h1>
+       <div class="row justify-content-center">
+         <form class="col-sm-8 mt-3" action="/settings/set" method="POST">
+          <%= amps = Map.get(Cha.status, :std, nil)  
+            if is_number(amps) do %>
+            <p> Standard amps: </p>
+            <input type="text" name="amps" value="<%= amps %>">
+            <input type="submit" value="OK">
+            <a href="/"> Zurück </a>
+          <% else %>
+            <p> Error reading charge controller state </p>
+          <% end %>
+         </form>
+       </div>
+     </div> <!-- end form container -->
+    </div> <!-- end container -->
+  </body>
+</html>
