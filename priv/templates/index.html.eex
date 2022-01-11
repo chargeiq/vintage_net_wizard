@@ -10,6 +10,7 @@
   <body class="bg-light h-100 d-flex flex-column">
      <div class="container access-points-container">
        <h1 class="text-right mt-2"><a href="/" style="color: <%= ui.title_color %>"><%= ui.title %></a></h1>
+       <!-- <img class="img-thumbnail" src="/chargeiq_light.svg"> -->
        <h3 class="text-left mt-2">
         WLAN- Status:
         <span class="<%= configuration_status.class %>">
