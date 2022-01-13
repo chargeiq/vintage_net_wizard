@@ -11,7 +11,7 @@
      <div class="container access-points-container">
        <h1 class="text-right mt-2"><a href="/" style="color: <%= ui.title_color %>"><%= ui.title %></a></h1>
        <h3 class="text-left mt-2">
-        WLAN- Status:
+        Configuration status:
         <span class="<%= configuration_status.class %>">
           <%= configuration_status.value%>
           <span style="bottom: 8px;right: 5px;position: relative" title="<%= configuration_status.title %>">
@@ -19,14 +19,14 @@
           </span>
         </span>
        </h3>
-       Wähle ein Netzwerk:
+       Choose a network from following list:
        <div class="my-3 p-3 bg-white rounded shadow-sm">
          <table class="table table-hover access-points-table">
              <thead>
                 <tr>
                   <th scope="col">SSID</th>
-                  <th scope="col">Sicherheit</th>
-                  <th scope="col">Signalstärke</th>
+                  <th scope="col">Security</th>
+                  <th scope="col">Signal Strength</th>
                 </tr>
              </thead>
              <tbody>
@@ -34,7 +34,7 @@
          </table>
        </div>
 
-       <a class="btn btn-primary" href="/networks/new" style="background-color:<%= ui.button_color %>">Verstecktes WLAN hinzufügen</a>
+       <a class="btn btn-primary" href="/networks/new" style="background-color:<%= ui.button_color %>">Add another network</a>
      </div>
 
      <footer class="py-3 bg-white shadow-sm w-100 text-muted">

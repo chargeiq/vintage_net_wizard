@@ -12,7 +12,7 @@
        <h1 class="text-right mt-2"><a href="/" style="color: <%= ui.title_color %>"><%= ui.title %></a></h1>
        <!-- <img class="img-thumbnail" src="/chargeiq_light.svg"> -->
        <h3 class="text-left mt-2">
-        WLAN- Status:
+        Configuration status:
         <span class="<%= configuration_status.class %>">
           <%= configuration_status.value%>
           <span style="bottom: 8px;right: 5px;position: relative" title="<%= configuration_status.title %>">
@@ -58,13 +58,14 @@
 
        </div>
 
-       
+       <p><i>Drag the networks to change the order that they will be tried</i></p>
+
        <a class="btn btn-primary" style="background-color:<%= ui.button_color %>" href="/networks">
-					Netzwerk hinzufügen
+         Add a new network
        </a>
        <%= if length(configs) > 0 do %>
-         <a class="btn btn-primary" style="background-color:<%= ui.button_color %>" href="/complete">
-           Konfiguration anwenden
+         <a class="btn btn-secondary" href="/complete" title="This will apply the configuration without any attempt to verify a successful network connection.">
+           Apply Configuration
          </a>
        <% end %>
      </div>

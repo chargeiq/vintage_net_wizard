@@ -13,8 +13,10 @@
        <div id="ssid" value="<%= ssid %>" hidden></div>
 
        <div class="content">
-        <p>Bitte warten, die Verbindung wird hergestellt.</p>
+        <p>Please wait while the <%= ui.title %> verifies your configuration.</p>
 
+        <p>If this page doesn't update in 15-30 seconds, check that you're connected to
+        the access point named "<b><%= ssid %></b>"</p>
        </div>
      </div>
      <footer class="py-3 bg-white shadow-sm w-100 text-muted">

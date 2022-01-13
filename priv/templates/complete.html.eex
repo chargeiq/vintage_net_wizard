@@ -12,7 +12,7 @@
        <h1 class="text-right mt-2"><a href="/" style="color: <%= ui.title_color %>"><%= ui.title %></a></h1>
 
        <div class="content">
-         WLAN- Konfiguration abgeschlossen!
+         WiFi configuration is complete!
        </div>
      </div>
      <footer class="py-3 bg-white shadow-sm w-100 text-muted">

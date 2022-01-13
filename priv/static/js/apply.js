@@ -53,11 +53,11 @@ function applyConfiguration(title, button_color) {
   function createCompleteLink({ targetElem, view }) {
     const button = document.createElement("button");
     var btnClass = "btn-primary";
-    var btnText = "Ok";
+    var btnText = "Complete";
 
     if (view === "configurationBad") {
       btnClass = "btn-danger";
-      btnText = "Absvhließen ohne Prüfung";
+      btnText = "Complete Without Verification";
     }
 
     if (view != "configurationBad") {
@@ -84,34 +84,37 @@ function applyConfiguration(title, button_color) {
     switch (view) {
       case "trying":
         return [`
-        <p>Bitte warten, die Einstellungen werden geprüft.</p>
+        <p>Please wait while the ${title} verifies your configuration.</p>
 
         <p>${dots}</p>
 
+        <p>If this page doesn't update in 15-30 seconds, check that you're connected to
+        the access point named "<b>${ssid}</b>"</p>
         `, runGetStatus
         ];
       case "configurationGood":
         return [`
-        <p>Erfolgreich verbunden!</p>
+        <p>Success!</p>
 
-        <p>Clicke "Ok" zum Beenden der Konfiguration.</p>
-        <p>In 60 Sekunden wird automatisch beendet..</p>
+        <p>Press "Complete" to exit the wizard and connect back to your previous network.</p>
+        <p>Exiting automatically after 60 seconds.</p>
         `, createCompleteLink];
       case "configurationBad":
         return [`
-        <p>Verbinden fehlgeschlagen.</p>
+        <p>Failed to connect.</p>
 
-        <p>Stellen Sie sicher, dass:</p>
+        <p>Try checking the following:</p>
         <ul>
-          <li>Eingegebene Passwörter korrekt sind</li>
-          <li>Mindestens ein angegebenes Netzwerk in Reichweite ist</li>
+          <li>All WiFi passwords are correct</li>
+          <li>At least one network is in range</li>
+          <li>Whether your network administrator requires additional steps for granting access to the WiFi network</li>
         </ul>
 
-        <p>Prüfen Sie Ihre Einstellungen und versuchen Sie es erneut.</p>
-        <a class="btn btn-primary" href="/">Konfiguration</a>
+        <p>Please check your setup and try again or skip verification.</p>
+        <a class="btn btn-primary" href="/">Configure</a>
         `, createCompleteLink];
       case "complete":
-        return ["Konfiguration abgeschlossen.", null];
+        return ["Configuration complete", null];
     }
   }
 
