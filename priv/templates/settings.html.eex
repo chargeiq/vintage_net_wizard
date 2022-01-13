@@ -15,10 +15,10 @@
          <form class="col-sm-8 mt-3" action="/settings/set" method="POST">
           <%= amps = Map.get(Cha.status, :std, nil)  
             if is_number(amps) do %>
-            <p> Standard amps: </p>
+            <p> Standard charging current (A): </p>
             <input type="text" name="amps" value="<%= amps %>">
-            <input type="submit" value="OK">
-            <a href="/"> Zurück </a>
+            <input type="submit" value="Set">
+            <a href="/"> Back </a>
           <% else %>
             <p> Error reading charge controller state </p>
           <% end %>
