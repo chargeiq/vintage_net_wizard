@@ -1,14 +1,14 @@
 defmodule VintageNetWizard.MixProject do
   use Mix.Project
 
-  @version "0.4.4"
+  @version "0.4.6"
   @source_url "https://github.com/nerves-networking/vintage_net_wizard"
 
   def project do
     [
       app: :vintage_net_wizard,
       version: @version,
-      elixir: "~> 1.9",
+      elixir: "~> 1.10",
       elixirc_paths: elixirc_paths(Mix.env()),
       test_coverage: [tool: ExCoveralls],
       start_permanent: Mix.env() == :prod,
@@ -62,10 +62,10 @@ defmodule VintageNetWizard.MixProject do
     [
       # Dependencies for all targets
       {:plug_cowboy, "~> 2.0"},
-      {:phoenix_html, "~> 2.13"},
+      {:phoenix_html, "~> 2.13 or ~> 3.0"},
       {:jason, "~> 1.0"},
-      {:vintage_net_wifi, "~> 0.9.0 or ~> 0.10.0"},
-      {:vintage_net, "~> 0.9.1 or ~> 0.10.0"},
+      {:vintage_net, "~> 0.9.1 or ~> 0.10.0 or ~> 0.11.0"},
+      {:vintage_net_wifi, "~> 0.9.0 or ~> 0.10.0 or ~> 0.11.0"},
       {:ex_doc, "~> 0.22", only: :docs, runtime: false},
       {:dialyxir, "~> 1.1.0", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.13", only: :test, runtime: false}

@@ -237,6 +237,9 @@ defmodule VintageNetWizard.Web.Router do
       :wpa2_psk_ccmp in flags ->
         :wpa_psk
 
+      :wpa2_psk_sae_ccmp in flags ->
+        :wpa_psk
+
       :wpa2_psk_ccmp_tkip in flags ->
         :wpa_psk
 
