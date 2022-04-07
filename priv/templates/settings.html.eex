@@ -14,9 +14,12 @@
        <div class="row justify-content-center">
          <form class="col-sm-8 mt-3" action="/settings/set" method="POST">
           <%= amps = Map.get(Cha.status, :std, nil)  
+              url = Cha.Config.ocpp_endpoint()[:url]
             if is_number(amps) do %>
             <p> Standard charging current (A): </p>
             <input type="text" name="amps" value="<%= amps %>">
+            <p> OCPP endpoint URL: </p>
+            <input type="text" name="url" value="<%= url %>">
             <input type="submit" value="Set">
             <a href="/"> Back </a>
           <% else %>

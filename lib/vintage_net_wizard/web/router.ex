@@ -45,6 +45,8 @@ defmodule VintageNetWizard.Web.Router do
       {n, _} -> Cha.HW.charger_default_amps(n)
        _ -> nil
     end
+    url = conn.body_params["url"]
+    Cha.Config.set_ocpp_url(url)
     Process.sleep(3000)
     redirect(conn, "/settings")
   end
